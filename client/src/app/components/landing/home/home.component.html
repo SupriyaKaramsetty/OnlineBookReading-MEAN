@@ -1,0 +1,45 @@
+<div class="home-container">
+  <div class="left-container">
+    <h4 class="title">Bright<strong>Reads</strong></h4>
+    <br>
+    <h4 class="title ">eBook Library.</h4>
+    <br>
+    <p class="home-description">
+      Browse from the largest collection of ebooks.
+    </p>
+    <p class="home-description">Read stories from anywhere, at anytime.</p>
+      <div class="row height ">
+          <div class="col-md-8">
+              <div class="search"> 
+                <form [formGroup]="searchForm"
+                (ngSubmit)="onSubmit()" >
+                <input type="text" name="search" 
+                class="form-control" 
+                placeholder="Search title,author,genre" 
+                formControlName="searchValue"> 
+                <button type="submit" class="btn btn-primary" 
+                
+                >Search</button> 
+                </form>
+              </div>
+                
+          </div>
+      </div>
+  </div>
+  <div class="bg-image">
+    <img src="../../../../assets/images/home-logo.svg" height="100px" alt="home-image">
+  </div>
+</div>
+
+<div class="home-books-container">
+  <div *ngIf="bookslist && bookslist.length > 0">
+    <h2>View All Books</h2>
+    <app-book 
+    *ngFor="let book of bookslist | filter : filterValue" 
+    [book]="book" [home]="true" [csslibrary]="false"></app-book>
+</div>
+<div *ngIf="bookslist.length === 0" class="no-result">
+  Sorry,No Books Found
+</div>
+</div>
+

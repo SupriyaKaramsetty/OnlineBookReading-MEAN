@@ -1,0 +1,23 @@
+<div class="library-container">
+<ul class="shelf-choice">
+    <li (click)="allBooks()" [ngClass]="{'xyz': allBooksStyle }">All</li>
+    <li (click)="wantToReadBooks()" [ngClass]="{'xyz': wantToReadStyle }">Want To Read 
+        <!-- <span class="badge badge-primary">{{wantToReadBooksLength}}</span> -->
+    </li>
+    <li (click)="currentlyReadingBooks()" [ngClass]="{'xyz': readingStyle }">Reading 
+        <!-- <span class="badge badge-primary">{{currentlyReadingBooksLength}}</span> -->
+    </li>
+    <li (click)="readBooks()" [ngClass]="{'xyz': readStyle }">Read 
+        <!-- <span class="badge badge-primary"> {{readBooksLength}}</span> -->
+    </li>
+</ul>
+<div class="empty"></div>
+<div class="book-list">
+<app-book   *ngFor="let book of libraryBooks" [book]="book" [library]="false" [csslibrary]="true"></app-book>
+<div *ngIf="libraryBooks.length === 0" class="no-result">
+    Your Shelf is Empty
+  </div>
+</div>
+</div>
+
+

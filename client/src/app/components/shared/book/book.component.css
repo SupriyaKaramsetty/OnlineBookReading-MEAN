@@ -1,0 +1,213 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Nunito:wght@600&display=swap');
+
+  .book-card-home {
+    font-family: 'Nunito',sans-serif;
+      border: 2px solid transparent;
+      display: inline-block;
+      vertical-align: top;
+      /* justify-content: center; */
+      margin: 15px;
+      min-width: 22.5%;
+      box-shadow: 5px 5px 30px 7px rgba(223, 217, 217, 0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      transition: 0.4s;
+    }
+    .book-card-home:hover{
+      transform: scale(0.9, 0.9);
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+  }
+
+  .book-card-home img {
+    width: 100%;
+    height: 350px;
+  }
+
+  .book-card-home .text{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .book-card-home  .book-buttons{
+
+    margin: 0 auto;
+    margin-bottom:10px;
+}
+
+.book-card-home h5{
+  margin: 10px 10px;
+  font-size: 16px;
+} 
+.book-card-home h6{
+  
+  font-size: 14px;
+} 
+.book-card-home h5,h6 {
+  display: inline-block;
+  /* font-size: 19px; */
+  text-align: center;
+  align-items: center;
+}
+
+.book-card {
+  font-family: 'Nunito',sans-serif;
+    border: 2px solid transparent;
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px;
+    min-width: 25%;
+    box-shadow: 5px 5px 30px 7px rgba(223, 217, 217, 0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.4s;
+    z-index: 5;
+  }
+
+  .book-card:hover{
+    transform: scale(0.9,0.9);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
+
+
+  .book-card img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .book-card .text{
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .book-card .book-buttons{
+
+    margin: 0 auto;
+    margin-bottom:10px;
+}
+
+.book-card h5{
+  margin: 10px 10px;
+  font-size: 16px;
+} 
+.book-card h6{
+  
+  font-size: 14px;
+} 
+.book-card h5,h6 {
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+}
+
+
+.book-card-library{
+  font-family: 'Nunito',sans-serif;
+    border: 2px solid transparent;
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px;
+    min-width: 25%;
+    box-shadow: 5px 5px 30px 7px rgba(223, 217, 217, 0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.4s;
+    z-index: 5;
+  }
+
+  .book-card-library:hover{
+    transform: scale(0.9,0.9);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
+}
+
+
+  .book-card-library img {
+    width: 100%;
+    height: 300px;
+  }
+
+
+  .book-card-library  .library-buttons{
+    /* width:200%; */
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    /* margin: 0 60px;
+    padding:5px; */
+}
+.library-buttons button{
+  margin-bottom:5px;
+}
+
+.book-card-library h5{
+  margin: 10px 10px;
+  font-size: 16px;
+} 
+.book-card-library h6{
+  
+  font-size: 14px;
+} 
+.book-card-library h5,h6 {
+  display: inline-block;
+  /* font-size: 19px; */
+  text-align: center;
+  align-items: center;
+}
+
+.book-card-detail{
+  font-family: 'Nunito',sans-serif;
+    border: 2px solid transparent;
+    display: inline-block;
+    vertical-align: top;
+    margin: 25px;
+    width: 100%;
+    box-shadow: 5px 5px 30px 7px rgba(223, 217, 217, 0.25), -5px -5px 30px 7px rgba(0,0,0,0.22);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: 0.4s;
+    z-index: 5;
+  }
+  .text{
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    width: 200px;
+}
+
+ @media screen and (max-width:1200px){
+  .book-card-home {
+    max-width: 33.3%;
+}
+
+ }
+ @media screen and (max-width:650px){
+  .book-card-home {
+    min-width: 50%;
+}
+
+ }
+ @media screen and (max-width:547px){
+  .book-card-home {
+    min-width: 90%;
+}
+
+ }
+
+ 
+
+
+
+/* .mat-primary{
+  color:pink;
+} */
+
+

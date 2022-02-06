@@ -1,0 +1,23 @@
+
+
+.admin-dashboard-links{
+    color:#fff;
+    margin: 0 auto;
+    margin-top:50px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    max-width:20%;
+    background-color: #353e5f ;
+    height:300px;
+    border-radius: 2px;
+    box-shadow: #fff 0px 3px 8px;
+
+}
+.admin-dashboard-links button{
+    width:150px;
+}
+

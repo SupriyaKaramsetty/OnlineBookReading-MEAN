@@ -1,0 +1,19 @@
+<div [ngClass]="{'book-card-home' : home, 'book-card' : !home ,'book-card-library' : csslibrary , 'book-card-detail' : relatedBooks}">
+    <img src="{{book.cover}}" alt="book-cover">
+    <div class="text">
+      <h5>{{book.title}}</h5>
+      <h6>by {{book.author}}</h6>
+    
+    <div [ngClass]="{'library-buttons': csslibrary, 'book-buttons' : !csslibrary}" >
+      <button mat-raised-button color="primary" routerLink="/book/detail/{{book._id}}" *ngIf="!relatedBooks">View Details</button>
+      <button mat-raised-button color="primary" *ngIf="relatedBooks" (click)="onViewDetails()" >View Details</button>
+      <!-- <button mat-raised-button color="accent" [matMenuTriggerFor]="menu" [hidden]="library">{{book.bookStatus}}</button>
+          <mat-menu #menu="matMenu" >
+            <button mat-menu-item (click)="wantToRead()">Want To Read</button>
+            <button mat-menu-item (click)="currentlyReading()">Reading</button>
+            <button mat-menu-item (click)="read()">Read</button>
+          </mat-menu>    -->
+    </div>
+  </div>
+    
+  </div>

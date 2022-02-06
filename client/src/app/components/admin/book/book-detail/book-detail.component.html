@@ -1,0 +1,53 @@
+
+<div class="book-container">
+  <div *ngIf="book" class="row book-details">
+    <div class="col-1 col-12-sm">
+      <img src="{{book.cover}}" alt="book-cover" />
+    </div>
+    <div class="col-7 col-12-sm book-info">
+      <h3>{{book?.title}}</h3> 
+      <br>
+      <br>
+      <!-- <rating  style="color: #0275d8;font-size: 40px;" [(ngModel)]="book.currentRating" [max]="max" [readonly]="!isLogged">
+      </rating> -->
+      <p>Author: {{book?.author}}</p>
+      <p>Genre: {{book?.genre}}</p>
+      <p>Release Year: {{book?.release_year}}</p>
+      <p>Format: PDF</p>
+      <p>Pages: {{book?.pageCount}}</p>
+      <p class="book-description">Description: {{book?.description}}</p>
+      <ng-template [ngIf]="isLogged">
+        <button class="btn btn-success" ><a style="color:aliceblue" [href]="book?.pdf" target="_blank">Read Book</a></button>
+        <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">{{book?.bookStatus}}</button>
+        <mat-menu #menu="matMenu" >
+          <button mat-menu-item (click)="wantToRead()">Want To Read</button>
+          <button mat-menu-item (click)="currentlyReading()">Reading</button>
+          <button mat-menu-item (click)="read()">Read</button>
+        </mat-menu>
+      </ng-template>
+      <ng-template [ngIf]="isAdmin">
+          <button mat-raised-button color="primary" (click)="onUpdate('book?._id')">Update Book</button>
+          <button mat-raised-button color="warn" (click)="onDelete('book?._id')">Delete Book</button>
+      </ng-template>
+        <ng-template [ngIf]="!isLogged">
+        <button class="btn btn-info" (click)="login()">Login to Read and Review</button>
+      </ng-template>
+    </div>
+    <ng-template [ngIf]="book">
+      <app-review [bookId]="bookId" [isLogged]="isLogged" [isAdmin]="isAdmin" [userId]="userId"></app-review>
+    </ng-template>
+  </div>
+ 
+  <div [hidden]="book" class="no-results">
+    Sorry, No Book Found 
+  </div>
+  <div class="related-books">
+    <h2>Related Books</h2>
+    <div class="related-books">
+      <app-book *ngFor="let book of relatedBooks" [book]="book" [relatedBooks] = "true"></app-book>
+    </div>
+  </div>
+  
+ 
+</div>
+  

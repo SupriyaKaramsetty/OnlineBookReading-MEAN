@@ -1,0 +1,20 @@
+<div class="browse-container">
+    <div class="genre-list">
+        <app-genre [genre]="genre"
+        *ngFor="let genre of genreList" 
+        (click)="chooseGenre(genre.genre_name)"
+        ></app-genre>
+    </div>
+    <div class="empty"></div>
+    <div class="book-list">
+        <div >
+            <app-book
+            *ngFor="let book of bookslist"
+            [book]="book" [csslibrary]="false"></app-book>
+        </div>
+        <div *ngIf="bookslist.length === 0" class="no-result">
+            Sorry, No Books Found <br>in {{fetchedGenreName}}
+          </div>
+    </div>
+</div>
+

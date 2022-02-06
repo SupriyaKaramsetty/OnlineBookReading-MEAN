@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Nunito:wght@600&display=swap');
+.browse-container{
+    display:flex;
+    flex-direction: row;
+    margin-top:50px;
+    /* height:1000px; */
+}
+
+.genre-list{
+    font-family: 'Nunito', sans-serif;
+    width:20%;
+    /* border:1px solid #353e5f; */
+    height:320px;
+    /* padding:20px; */
+    border-radius: 2px;
+    margin-left:50px;
+    box-shadow: #353e5f 0px 3px 8px;
+}
+
+.book-list{
+    width:70%;
+    padding:20px;
+    /* justify-items: end; */
+}
+
+.empty{
+    width:10%;
+}
+
+.no-result{
+    font-weight:bold;
+    font-size:40px;
+    margin: auto;
+    font-family: 'Nunito',sans-serif;
+    text-align: center;
+
+}

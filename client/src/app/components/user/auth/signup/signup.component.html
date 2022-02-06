@@ -1,0 +1,94 @@
+<section class="signup">
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <h2 class="form-title">Sign up</h2>
+                <h5 class="text-danger">{{errorMsg}}</h5>
+                <form  class="register-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="name"></label>
+                        <input 
+                        type="text"
+                         name="name" 
+                         id="name" 
+                         placeholder="Name"
+                         formControlName="username"/>
+                    </div>
+                    <div class="text-danger" 
+                    *ngIf="submitted || (signupFormControl.username.touched || signupFormControl.username.dirty)">
+                        <div *ngIf="signupFormControl.username.errors?.required">
+                          Username is required
+                        </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input 
+                        type="email" 
+                        name="email" 
+                        id="email"
+                        placeholder="Email"
+                        formControlName="email"/>
+                    </div>
+                    <div class="text-danger" 
+                    *ngIf="submitted || (signupFormControl.email.touched 
+                    || signupFormControl.email.dirty)">
+                        <div *ngIf="signupFormControl.email.errors?.required">
+                          Email is required
+                        </div>
+                        <div *ngIf="signupFormControl.email.errors?.email">
+                            Email is Invalid
+                          </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input 
+                        type="password" 
+                        name="password" 
+                        id="password" 
+                        placeholder="Password"
+                        formControlName="password"/>
+                    </div>
+                    <div class="text-danger"
+                                *ngIf="submitted || (signupFormControl.password.touched || signupFormControl.password.dirty )">
+                            <div *ngIf="signupFormControl.password.errors?.required" >
+                                Password is required
+                            </div>
+                            <div *ngIf="signupFormControl.password.errors?.minlength" >
+                                Password length should exceed 7 characters
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cnfpass"></label>
+                        <input 
+                        type="password" 
+                        name="cnfpass" 
+                        id="cnfpass" 
+                        placeholder="Confirm password"
+                        formControlName="confirmpassword"/>
+                    </div>
+                    <div class="text-danger"
+                                *ngIf="submitted || (signupFormControl.confirmpassword.touched || signupFormControl.confirmpassword.dirty )">
+                            <div *ngIf="signupFormControl.password.value  && signupFormControl.confirmpassword.errors?.required" >
+                                Confirm your Password
+                            </div>
+                            
+                            <div class="text-danger"
+                                *ngIf="signupFormControl.confirmpassword.errors?.mustMatch">
+                                Password does not match
+                            </div>
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signup" id="signup" class="form-submit" value="Signup"
+                        
+                        />
+                    </div>
+                </form>
+            </div>
+            <div class="signup-image">
+                <figure><img src="../../../../assets/images/signup-image.jpg" alt="signup image"></figure>
+                <a routerLink="/user/login" class="signup-image-link">Already a already member?   Login
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

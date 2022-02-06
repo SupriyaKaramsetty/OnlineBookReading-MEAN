@@ -1,0 +1,33 @@
+
+<nav class="navbar">
+    <div class="brand" routerLink="/home" >BrightReads</div>
+    <ul class="nav-links">
+        <li class="nav-link" routerLink="/home"  routerLinkActive="active"  [routerLinkActiveOptions]={exact:true}>
+            Home
+        </li>
+        <li class="nav-link" routerLink="/browse" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+            Browse
+        </li>
+        <ng-template [ngIf]="isLogged">
+            <li class="nav-link"  routerLink="/user/my-library" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                My Library
+            </li>
+            <li class="nav-link"  routerLink="/user/dashboard" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                My Dashboard
+            </li>
+             <li class="nav-link" routerLink="/user/login" (click)="onLogout()">
+                 Logout
+            </li>
+        </ng-template>
+        
+        <ng-template [ngIf]="!isUserLogged()">
+            <li class="nav-link" routerLink="/user/signup" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+                Signup
+            </li>
+            <li class="nav-link" routerLink="/user/login" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>
+               Login
+            </li>
+        </ng-template>
+        
+    </ul>
+  </nav>

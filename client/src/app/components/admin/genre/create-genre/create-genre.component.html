@@ -1,0 +1,11 @@
+<form class="addGenre" [formGroup]="createGenreForm" (ngSubmit)="onSubmit()">
+    <h1>Add new Genre</h1>
+    <mat-form-field [formGroup]="createGenreForm" class="form-field">
+      <input matInput type="text" class="genre_name" name="genre_name" placeholder="Genre Name" formControlName="genre_name" />
+      <mat-error *ngIf="submitted && (createGenreFormControl.genre_name.dirty || createGenreFormControl.genre_name.touched)" class="text-danger">
+        <mat-error *ngIf="createGenreFormControl.genre_name.errors?.required">
+          Genre name is required
+        </mat-error>
+      </mat-error>
+    </mat-form-field >
+    <button mat-raised-button color="primary" type="submit" class="submit" value="Add New Genre">Add Genre</button>

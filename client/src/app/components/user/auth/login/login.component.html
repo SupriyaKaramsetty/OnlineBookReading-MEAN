@@ -1,0 +1,62 @@
+<section class="login">
+    <div class="container">
+        <div class="login-content">
+            <div class="login-image">
+                <figure><img src="i../../../../assets/images/login-image.jpg" alt="login image"></figure>
+                <a routerLink="/user/signup" class="login-image-link">Not a Member? Sign Up</a>
+            </div>
+            
+            <div class="login-form">
+              
+                <h2 class="form-title">Login</h2>
+                <h5 class="text-danger">{{errorMsg}}</h5>
+                <form  class="register-form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()"> 
+                    <div class="form-group">
+                        <label for="email"></label>
+                        <input type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="Email"
+                        formControlName="email"/>
+                    </div>
+                    <div class="text-danger" *ngIf="submitted || (loginFormControl.email.touched || loginFormControl.email.dirty)">
+
+                      <div *ngIf="loginFormControl.email.errors?.required">  
+                          Email is required
+                        </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="password"></label>
+                        <input [type]="toggle ? 'text' : 'password'"
+                        name="password"
+                        name="password" 
+                        id="password" 
+                        placeholder="Password"
+                        formControlName="password" />
+                        <!-- <button type="button" class="password-hide" (click)="toggle = !toggle">
+                          {{ toggle ? "Hide" : "Show" }}
+                        </button> -->
+                    </div>
+                    <div *ngIf="submitted || (loginFormControl.password.touched || loginFormControl.password.dirty)"
+                    class="text-danger">
+                        <div *ngIf="loginFormControl.password.errors?.required">
+                          Password is required
+                        </div>
+                        <div *ngIf="loginFormControl.password.errors?.minlength">
+                          Password must be atleast 8 characters in Length
+                        </div>
+                      </div>
+                    <div class="form-group form-button">
+                        <input type="submit" 
+                        name="login" 
+                        id="login" 
+                        class="form-submit" 
+                        value="Login"
+                        />
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

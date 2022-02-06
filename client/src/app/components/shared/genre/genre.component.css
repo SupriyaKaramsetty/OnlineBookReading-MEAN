@@ -1,0 +1,22 @@
+.genre{
+    cursor:pointer;
+    /* margin-top:10px; */
+    /* text-indent: 30px; */
+    list-style-type: none;
+    color:#353e5f;
+    font-size:20px;
+    padding:15px;
+    
+
+}
+/* li:hover{
+    color:rgb(245, 245, 248);
+} */
+.genre:active{
+    color:rgb(245, 245, 248);
+    background-color: #353e5f;;
+}
+.active{
+    color:rgb(245, 245, 248);
+    background-color: #353e5f;;
+}

@@ -1,0 +1,98 @@
+
+
+
+<div class="container" >
+  <form  class="form" [formGroup]="updateBookForm" (ngSubmit)="onSubmit()">
+    <!-- <mat-form-field class="form-element">
+      <input matInput type="text" class="id" name="id" placeholder="Book ID" formControlName="_id"/>
+    </mat-form-field > -->
+    <mat-form-field class="form-element">
+      <input matInput type="text" class="title" name="title" placeholder="Book Title" formControlName="title"/>
+      <mat-error *ngIf="updateBookFormControl.title.invalid && (updateBookFormControl.title.dirty || updateBookFormControl.title.touched)" class="input-error">
+          {{bookTitlError}}
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <input matInput type="text" class="author" name="author" placeholder="Book Author" formControlName="author" />
+
+      <mat-error *ngIf="updateBookFormControl.author.invalid && (updateBookFormControl.author.dirty || updateBookFormControl.author.touched)" class="input-error">
+          {{bookAuthorError}}
+      </mat-error>
+    </mat-form-field>
+    <!-- <mat-form-field class="form-element">
+      <input matInput type="text" class="genre" name="genre" placeholder="Book Genre" formControlName="genre" />
+
+      <mat-error *ngIf="updateBookFormControl.genre.invalid && (updateBookFormControl.genre.dirty || updateBookFormControl.genre.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.genre.errors?.required">
+          Book genre is required
+        </mat-error>
+      </mat-error>
+    </mat-form-field> -->
+    <mat-form-field class="form-element">
+      <mat-select formControlName="genre" placeholder="Select Genre">
+        <mat-option *ngFor="let genre of genreList" [value]="genre">
+          {{genre.genre_name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="updateBookFormControl.genre.invalid && (updateBookFormControl.genre.dirty || updateBookFormControl.genre.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.genre.errors?.required">
+          Book genre is required
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <input matInput type="number" class="release_year" name="release_year" placeholder="Book Relase Year" formControlName="release_year" step="1" />
+      <mat-error *ngIf="updateBookFormControl.release_year.invalid && (updateBookFormControl.release_year.dirty || updateBookFormControl.release_year.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.release_year.errors?.required">
+          Book release year is required
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <textarea matInput class="description" name="description" placeholder="Book description" formControlName="description" cols="30" rows="2"></textarea>
+      <mat-error *ngIf="updateBookFormControl.description.invalid && (updateBookFormControl.description.dirty || updateBookFormControl.description.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.description.errors?.required || updateBookFormControl.description.errors?.minlength ">
+          Book description must be more than 20 letters
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-element">
+      <input matInput type="url" class="cover" name="cover" placeholder="Book Cover" formControlName="cover" />
+      <mat-error *ngIf="updateBookFormControl.cover.invalid && (updateBookFormControl.cover.dirty || updateBookFormControl.cover.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.cover.errors?.required">
+          Book cover is required
+        </mat-error>
+        <!-- <mat-error *ngIf="!updateBookFormControl.cover.errors?.isUrl">
+          Book cover must be a valid Url
+        </mat-error> -->
+        <!-- {{bookCoverErrorMethod()}} -->
+      </mat-error>
+    </mat-form-field >
+    <mat-form-field class="form-element">
+      <input matInput type="url" class="pdf" name="pdf" placeholder="Book Pdf Url" formControlName="pdf" />
+      <mat-error *ngIf="updateBookFormControl.pdf.invalid && (updateBookFormControl.pdf.dirty || updateBookFormControl.pdf.touched)" class="input-error">
+        <mat-error *ngIf="updateBookFormControl.pdf.errors?.required">
+          Book Pdf is required
+        </mat-error>
+        <mat-error *ngIf="!updateBookFormControl.pdf.errors?.isUrl">
+          Book Pdf must be a valid Url
+        </mat-error>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field  class="form-element">
+      <input matInput type="number" class="pageCount" name="pageCount" placeholder="Pages" formControlName="pageCount" step="1"
+      />
+      <mat-error *ngIf="updateBookFormControl.pageCount.invalid && (updateBookFormControl.pageCount.dirty || updateBookFormControl.pageCount.touched)" class="input-error">
+        <mat-error  *ngIf="updateBookFormControl.pageCount.errors?.required">
+         Pages is required
+        </mat-error >
+        <!-- <div *ngIf="updateBookFormControl.pageCount.errors?.min">
+          Pages count must be positive number
+        </div> -->
+      </mat-error>
+    </mat-form-field >
+    <div class="form-element">
+      <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!updateBookForm.valid">Update Book</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<!-- 
+<div class="genre-list">
+    <p
+    *ngFor="let genre of genreList" 
+    (click)="deleteGenre(genre._id)"></p>
+</div> -->
+
+<ul class="genre-list" *ngFor="let genre of genreList" >
+    <li  (click)="deleteGenre(genre._id)">{{genre.genre_name}}  <i class="material-icons md-48">delete</i></li>
+   
+    <hr>
+</ul>

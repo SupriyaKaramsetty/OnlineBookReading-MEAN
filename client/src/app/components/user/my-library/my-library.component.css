@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Nunito:wght@600&display=swap');
+.library-container{
+display: flex;
+
+}
+
+.shelf-choice{
+    
+    margin-top:45px;
+    font-size:20px;
+    cursor: pointer;
+    height:600px;
+    font-family: 'Nunito', sans-serif;
+    width:20%;
+    height:200px;
+    border-radius: 2px;
+    margin-left:50px;
+    box-shadow: #353e5f 0px 3px 8px;
+    padding:0;
+   
+}
+/* .shelf-choice li{
+    color:grey;
+    padding: 0;
+    margin-top:100px;
+    margin:20px;
+    list-style-type:none;
+    cursor:pointer;
+    background-color: #fff ;
+} */
+
+.book-list{
+    width:70%;
+    padding:20px;
+}
+
+.empty{
+    width:10%;
+}
+
+.shelf-choice li{
+    list-style-type: none;
+    text-indent: 10px;
+}
+/* .shelf-choice li:hover{
+    color:white;
+    background-color: #353e5f;
+} */
+
+/* .li-active{
+    color:#020202;
+  
+} */
+
+.allBooks{
+    color:white;
+    background-color: #353e5f;
+}
+
+.no-result{
+    font-weight:bold;
+    font-size:40px;
+    margin: 0 auto;
+    margin-top:50px;
+    font-family: 'Nunito',sans-serif;
+    text-align: center;
+
+}
+.no-result:active{
+    font-weight:bold;
+    font-size:40px;
+    margin: 0 auto;
+    margin-top:50px;
+    font-family: 'Nunito',sans-serif;
+    text-align: center;
+    background-color: cadetblue;
+
+}
+
+.xyz{
+    color:white;
+    background-color: #353e5f;
+}

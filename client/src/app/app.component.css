@@ -1,0 +1,9 @@
+
+#page-container {
+  position:relative;
+    min-height: 700px;
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    
+  }

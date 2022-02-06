@@ -1,0 +1,30 @@
+.reviews{
+   color:#353e5f;
+    width: 70%;
+    display: flex;
+    flex-direction:column;
+    align-items: start;
+}
+.add-review{
+    display: inline-block;
+    align-items: center;
+}
+textarea{
+    margin-right:30px;
+}
+.reviews h3{
+    margin-top:30px;
+}
+.reader-reviews-list{
+    display: flex;
+    justify-content: space-between;
+    padding:15px;
+}
+.reader-reviews-list p{
+    margin-right: 100px;
+}
+.material-icons.md-48 { 
+    color: red;
+}
+
+

@@ -1,0 +1,101 @@
+
+<div class="container" >
+    <form  class="form" [formGroup]="createBookForm" (ngSubmit)="onSubmit()">
+      <!-- <mat-form-field class="form-element">
+        <input matInput type="text" class="id" name="id" placeholder="Book ID" formControlName="_id" />
+        <i class="fas fa-book" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl._id.invalid && (createBookFormControl._id.dirty || createBookFormControl._id.touched)" class="input-error">
+            {{bookIdError}}
+        </mat-error>
+      </mat-form-field > -->
+      <mat-form-field class="form-element">
+        <input matInput type="text" class="title" name="title" placeholder="Book Title" formControlName="title" />
+        <i class="fas fa-book" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.title.invalid && (createBookFormControl.title.dirty || createBookFormControl.title.touched)" class="input-error">
+            {{bookTitlError}}
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput type="text" class="author" name="author" placeholder="Book Author" formControlName="author" />
+        <i class="fas fa-user" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.author.invalid && (createBookFormControl.author.dirty || createBookFormControl.author.touched)" class="input-error">
+            {{bookAuthorError}}
+        </mat-error>
+      </mat-form-field>
+      <!-- <mat-form-field class="form-element">
+        <input matInput type="text" class="genre" name="genre" placeholder="Book Genre" formControlName="genre" />
+        <i class="fas fa-clipboard" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.genre.invalid && (createBookFormControl.genre.dirty || createBookFormControl.genre.touched)" class="input-error">
+          <mat-error *ngIf="createBookFormControl.genre.errors?.required">
+            Book genre is required
+          </mat-error>
+        </mat-error>
+      </mat-form-field> -->
+      <mat-form-field class="form-element">
+        <mat-select formControlName="genre" placeholder="Select Genre">
+          <mat-option *ngFor="let genre of genreList" [value]="genre">
+            {{genre.genre_name}}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="createBookFormControl.genre.invalid && (createBookFormControl.genre.dirty || createBookFormControl.genre.touched)" class="input-error">
+          <mat-error *ngIf="createBookFormControl.genre.errors?.required">
+            Book genre is required
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput type="number" class="release_year" name="release_year" placeholder="Book Relase Year" formControlName="release_year" step="1" />
+        <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.release_year.invalid && (createBookFormControl.release_year.dirty || createBookFormControl.release_year.touched)" class="input-error">
+          <mat-error *ngIf="createBookFormControl.release_year.errors?.required">
+            Book release year is required
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <textarea matInput class="description" name="description" placeholder="Book description" formControlName="description" cols="30" rows="2"></textarea>
+        <i class="fas fa-pen" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.description.invalid && (createBookFormControl.description.dirty || createBookFormControl.description.touched)" class="input-error">
+          <mat-error *ngIf="createBookFormControl.description.errors?.required || createBookFormControl.description.errors?.minlength ">
+            Book description must be more than 20 letters
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="form-element">
+        <input matInput type="url" class="cover" name="cover" placeholder="Book Cover" formControlName="cover" />
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.cover.invalid && (createBookFormControl.cover.dirty || createBookFormControl.cover.touched)" class="input-error">
+          <!-- <mat-error *ngIf="createBookFormControl.cover.errors?.required">
+            Book cover is required
+          </mat-error>
+          <mat-error *ngIf="!createBookFormControl.cover.errors?.isUrl">
+            Book cover must be a valid Url
+          </mat-error> -->
+          {{bookCoverErrorMethod()}}
+        </mat-error>
+      </mat-form-field >
+      <mat-form-field class="form-element">
+        <input matInput type="url" class="pdf" name="pdf" placeholder="Book Pdf Url" formControlName="pdf" />
+        <i class="fas fa-book-open" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.pdf.invalid && (createBookFormControl.pdf.dirty || createBookFormControl.pdf.touched)" class="input-error">
+          <mat-error *ngIf="createBookFormControl.pdf.errors?.required">
+            Book Pdf is required
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field  class="form-element">
+        <input matInput type="number" class="pageCount" name="pageCount" placeholder="Pages" formControlName="pageCount" step="1"
+        />
+        <i class="fas fa-file-alt" aria-hidden="true"></i>
+        <mat-error *ngIf="createBookFormControl.pageCount.invalid && (createBookFormControl.pageCount.dirty || createBookFormControl.pageCount.touched)" class="input-error">
+          <div *ngIf="createBookFormControl.pageCount.errors?.required">
+           Pages is required
+          </div>
+        </mat-error>
+      </mat-form-field >
+      <div class="form-element">
+        <button mat-raised-button color="primary" type="submit" class="button" [disabled]="!createBookForm.valid">Create Book</button>
+      </div>
+      <!-- <input type="submit" class="submit" value="Create Book" [disabled]="createBookForm.invalid" /> -->
+    </form>
+  </div>
