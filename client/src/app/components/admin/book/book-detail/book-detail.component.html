@@ -17,8 +17,8 @@
       <p>Pages: {{book?.pageCount}}</p>
       <p class="book-description">Description: {{book?.description}}</p>
       <ng-template [ngIf]="isLogged">
-        <button class="btn btn-success" ><a style="color:aliceblue" [href]="book?.pdf" target="_blank">Read Book</a></button>
-        <button mat-raised-button color="accent" [matMenuTriggerFor]="menu">{{book?.bookStatus}}</button>
+        <button class="btn btn-success" *ngIf="!isAdmin" ><a style="color:aliceblue" [href]="book?.pdf" target="_blank"  >Read Book</a></button>
+        <button mat-raised-button color="accent" *ngIf="!isAdmin" [matMenuTriggerFor]="menu">{{book?.bookStatus}}</button>
         <mat-menu #menu="matMenu" >
           <button mat-menu-item (click)="wantToRead()">Want To Read</button>
           <button mat-menu-item (click)="currentlyReading()">Reading</button>
